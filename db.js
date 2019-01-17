@@ -9,7 +9,7 @@ sql_database = process.env.SQL_DATABASE;
 sql_instance = '/cloudsql/' + process.env.INSTANCE_CONNECTION_NAME;
 sql_ip = process.env.SQL_IP;
 
-const sequelize = new Sequelize(sql_database, sql_user, sql_password, {
+const sequelize = new Sequelize(sql_database, sql_user, null, {
 	host: sql_ip,
 	dialect: 'mysql',
 	operatorsAliases: false,
