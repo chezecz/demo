@@ -45,4 +45,4 @@ function calculate_consecutive_zero(binary_number) {
 	console.log(k);
 }
 
-module.exports = translate_to_ascii;
+module.exports = save_name;

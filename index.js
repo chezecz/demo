@@ -8,6 +8,8 @@ const app = express();
 
 const func = require('../demo/functions');
 
+func("Ann", "Other");
+
 app.use(cors());
 
 app.use(express.static(__dirname));

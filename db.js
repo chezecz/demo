@@ -13,13 +13,13 @@ const sequelize = new Sequelize(sql_database, sql_user, null, {
 	host: sql_ip,
 	dialect: 'mysql',
 	operatorsAliases: false,
-	logging: false,
+	// logging: false,
 	define: {
 		timestamps: false
 	},
-	dialectOptions: {
-		socketPath: sql_instance
-	},
+	// dialectOptions: {
+	// 	socketPath: sql_instance
+	// },
 	pool: {
 		max: 5,
 		min: 0,
@@ -28,7 +28,7 @@ const sequelize = new Sequelize(sql_database, sql_user, null, {
 	}
 });
 
-const Users = sequelize.define('users', {
+const Users = sequelize.define('names', {
 	userid: {
 		type: Sequelize.INTEGER,
 		field: 'userid',
