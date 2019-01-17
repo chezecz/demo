@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
@@ -10,17 +11,15 @@ const func = require('../demo/functions');
 
 app.use(cors());
 
-app.use(express.static(__dirname));
+app.use(bodyParser.json());
 
 app.use('/', express.static(__dirname+'/dist/demo'));
 
 app.post('/submit', (req, res) => {
-	console.log(req);
-	// func();
-});
-
-app.get("*", (req, res) => {
-    res.sendFile(path.normalize(__dirname+'/dist/demo/index.html'));
+	user = req.body.user;
+	k = func(user.firstname, user.lastname)
+	console.log(k)
+	return k;
 });
 
 app.listen(8080, () => console.log('Server Activated!'));

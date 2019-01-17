@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { User } from '../../classes/User';
+import { DemoService } from '../demo.service';
 
 @Component({
   selector: 'app-demo',
@@ -11,7 +12,8 @@ import { User } from '../../classes/User';
 export class DemoComponent implements OnInit {
 
   constructor(
-  	private http: HttpClient
+  	private http: HttpClient,
+  	private data_service: DemoService
   	) { }
 
   value: number;
@@ -22,7 +24,7 @@ export class DemoComponent implements OnInit {
   }
 
   submitClick() {
-  	return this.http.post<any>('/submit', {firstname: this.user.firstname, lastname: this.user.lastname}).subscribe(value => {
+  	this.data_service.send_data(this.user).subscribe(value => {
   		this.value = value;
   	})
   }
