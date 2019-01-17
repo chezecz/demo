@@ -17,6 +17,14 @@ app.use(function (req, res, next) {
 app.use(function (err, req, res, next) {
 	console.error(err.stack);
 	res.status(500).send('500');
-})
+});
+
+app.get('/submit', (req, res) => {
+
+});
+
+app.get("*", (req, res) => {
+    res.sendFile(path.normalize(__dirname));
+});
 
 app.listen(8080, () => console.log('Server Activated!'));
