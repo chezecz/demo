@@ -10,16 +10,16 @@ sql_instance = '/cloudsql/' + process.env.INSTANCE_CONNECTION_NAME;
 sql_ip = process.env.SQL_IP;
 
 const sequelize = new Sequelize(sql_database, sql_user, null, {
-	host: sql_ip,
+	host: 'localhost',
 	dialect: 'mysql',
 	operatorsAliases: false,
 	logging: false,
 	define: {
 		timestamps: false
 	},
-	// dialectOptions: {
-	// 	socketPath: sql_instance
-	// },
+	dialectOptions: {
+		socketPath: sql_instance
+	},
 	pool: {
 		max: 5,
 		min: 0,
