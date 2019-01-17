@@ -4,6 +4,7 @@ var sum = 0;
 var k = 0;
 
 function save_name(first_name, last_name) {
+	k=0;
 	name = first_name + ' ' + last_name;
 	db.Users.create({
 		first_name: first_name,

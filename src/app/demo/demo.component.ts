@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { User } from '../../classes/User';
+import { DemoService } from '../demo.service';
 
 @Component({
   selector: 'app-demo',
@@ -7,7 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private http: HttpClient,
+  	private data_service: DemoService
+  	) { }
+
+  value: number;
+
+  @Input() user: User = {
+  	firstname: "",
+  	lastname: ""
+  }
+
+  submitClick() {
+  	this.data_service.send_data(this.user).subscribe(value => {
+  		this.value = value;
+  	})
+  }
 
   ngOnInit() {
   }
