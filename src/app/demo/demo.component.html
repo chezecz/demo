@@ -1,9 +1,9 @@
-<form>
+<form action="/submit" (ngSubmit)="submitClick()" method="post">
 	<label>First Name: 
-		<input type="text" name="firstname">
+		<input [(ngModel)]="user.firstname" type="text" name="firstname">
 	</label>
 	<label>Last Name:
-		<input type="text" name="lastname">
+		<input [(ngModel)]="user.lastname" type="text" name="lastname">
 	</label>
 	<button type="submit">Submit</button>
 </form>
