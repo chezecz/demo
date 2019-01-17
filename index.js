@@ -4,6 +4,10 @@ const cors = require('cors');
 
 require('dotenv').config();
 
+const app = express();
+
+const func = require('../demo/functions');
+
 app.use(cors());
 
 app.use(express.static(__dirname));
