@@ -13,7 +13,7 @@ const sequelize = new Sequelize(sql_database, sql_user, null, {
 	host: sql_ip,
 	dialect: 'mysql',
 	operatorsAliases: false,
-	// logging: false,
+	logging: false,
 	define: {
 		timestamps: false
 	},

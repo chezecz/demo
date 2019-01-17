@@ -8,7 +8,7 @@ const app = express();
 
 const func = require('../demo/functions');
 
-func("Ann", "Other");
+console.log(func("Ann", "Other"));
 
 app.use(cors());
 
