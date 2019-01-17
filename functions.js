@@ -1,4 +1,4 @@
-const db = require('../demo/db.js');
+const db = require('./db.js');
 
 var sum = 0;
 var k = 0;

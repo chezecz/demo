@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 
-const func = require('../demo/functions');
+const func = require('./functions');
 
 app.use(cors());
 

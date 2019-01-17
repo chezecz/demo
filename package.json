@@ -2,11 +2,10 @@
   "name": "demo",
   "version": "0.0.0",
   "scripts": {
-    "scripts": {
     "prestart": "node getEnv",
     "start": "node index.js"
     }
-  },
+  ,
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
