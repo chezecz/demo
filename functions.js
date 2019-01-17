@@ -41,6 +41,9 @@ function calculate_consecutive_zero(binary_number) {
 			i = 0;
 		}
 	}
+	if (k <= i) {
+		k = i;
+	}
 	return k;
 }
 
