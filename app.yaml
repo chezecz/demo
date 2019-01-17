@@ -1,0 +1,5 @@
+runtime: nodejs
+beta_settings:
+    cloud_sql_instances: palo-228901:australia-southeast1:demo
+env_variables:
+    PROJECT_NAME: demo
