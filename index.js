@@ -17,9 +17,7 @@ app.use('/', express.static(__dirname+'/dist/demo'));
 
 app.post('/submit', (req, res) => {
 	user = req.body.user;
-	k = func(user.firstname, user.lastname)
-	console.log(k)
-	return k;
+	res.json(func(user.firstname, user.lastname));
 });
 
 app.listen(8080, () => console.log('Server Activated!'));

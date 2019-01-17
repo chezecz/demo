@@ -17,6 +17,6 @@ export class DemoService {
 
   send_data(user): Observable<any> {
   	this.user = user;
-  	return this.http.post('/submit', {user});
+  	return this.http.post<any>('/submit', {user});
   }
 }
